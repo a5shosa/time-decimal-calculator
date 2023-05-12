@@ -7,5 +7,5 @@ services:
       - "3000:3000" # for development
       - "4000:4000" # for production
     volumes:
-      - ./app/datetime_to_decimal_number_calculator:/app
+      - ./app:/app
     command: yarn dev
