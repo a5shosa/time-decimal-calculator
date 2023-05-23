@@ -138,9 +138,9 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between smartphone:p-6 tablet:p-6 laptop:p-16 ${inter.className}`}>
+      className={`flex min-h-screen flex-col items-center justify-between minismartphone:p-3 minismartphone:pb-12 smartphone:p-4 smartphone:pb-12 tablet:p-6 laptop:p-16 ${inter.className}`}>
       <div
-        className="container z-10 w-full items-center justify-between font-mono text-sm grid grid-cols-3 gap-1">
+        className="container z-10 w-full max-w-5xl items-center justify-between font-mono text-sm grid grid-cols-3 gap-1">
         <div className="col-span-3 mb-6">
           <MainHeader />
         </div>
