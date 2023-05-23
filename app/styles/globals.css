@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  touch-action: manipulation;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
