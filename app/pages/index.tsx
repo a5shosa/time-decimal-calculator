@@ -119,7 +119,7 @@ export default function Home() {
       setFormData((prevState) => ({...prevState, ['log']: `${append}\n${formData.log}`}))
     }
   }
-  
+
   const handleConvertTimeToDecimal = () => {
     const a: number = convertTimeToDecimal(formData.timeFrom)
     const b: number = convertTimeToDecimal(formData.timeTo)
@@ -133,14 +133,14 @@ export default function Home() {
 
     setFormData((prevState) => ({...prevState, ['timeFrom']: `${a}`, ['timeTo']: `${b}`}))
   }
-  
+
   const handleFlushLog = () => setFormData((prevState) => ({...prevState, ['log']: ''}))
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-16 ${inter.className}`}>
+      className={`flex min-h-screen flex-col items-center justify-between smartphone:p-6 tablet:p-6 laptop:p-16 ${inter.className}`}>
       <div
-        className="container z-10 w-full max-w-5xl items-center justify-between font-mono text-sm grid grid-cols-3 gap-2">
+        className="container z-10 w-full items-center justify-between font-mono text-sm grid grid-cols-3 gap-1">
         <div className="col-span-3 mb-6">
           <MainHeader />
         </div>
@@ -150,7 +150,7 @@ export default function Home() {
             <div className="col-span-1">
               <div className="mb-6">
                 <FormInputText
-                  label={'時刻(HH:MM形式)'}
+                  label={'時刻(HH:MM)'}
                   name={'timeFrom'}
                   tabIndex={1}
                   placeholder={'09:00'}
@@ -162,7 +162,7 @@ export default function Home() {
             <div className="col-span-1">
               <div className="mb-6">
                 <FormInputText
-                  label={'時刻(10進数形式)'}
+                  label={'時刻(10進数)'}
                   name={'decimalFrom'}
                   tabIndex={7}
                   placeholder={'9.5'}
@@ -187,14 +187,20 @@ export default function Home() {
               </div>
             </div>
             <div className="col-span-1 text-center">
-              <FormButton
-                label='HH:MM を 10進数 に変換 →'
-                tabIndex={5}
-                onClick={handleConvertTimeToDecimal} />
-              <FormButton
-                label='← 10進数 を HH:MM に変換'
-                tabIndex={6}
-                onClick={handleConvertDecimalToTime} />
+              <div className="grid grid-cols-1">
+                <div className="col-span-1">
+                  <FormButton
+                    label='10進数に変換→'
+                    tabIndex={5}
+                    onClick={handleConvertTimeToDecimal} />
+                </div>
+                <div className="col-span-1">
+                  <FormButton
+                    label='←HH:MMに変換'
+                    tabIndex={6}
+                    onClick={handleConvertDecimalToTime} />
+                </div>
+              </div>
             </div>
             <div className="col-span-1">
               <div className="mb-6">
@@ -215,7 +221,7 @@ export default function Home() {
             <div className="col-span-1">
               <div className="mb-6">
                 <FormInputText
-                  label={'時刻(HH:MM形式)'}
+                  label={'時刻(HH:MM)'}
                   name={'timeTo'}
                   tabIndex={3}
                   placeholder={'12:00'}
@@ -227,7 +233,7 @@ export default function Home() {
             <div className="col-span-1">
               <div className="mb-6">
                 <FormInputText
-                  label={'時刻(10進数形式)'}
+                  label={'時刻(10進数)'}
                   name={'decimalTo'}
                   tabIndex={9}
                   placeholder={'12.0'}
@@ -244,7 +250,7 @@ export default function Home() {
               <div className="mb-6 text-center">
                 <FormButton
                   disabled={!isValidForCalcTime()}
-                  label='HH:MM の計算'
+                  label='HH:MM計算'
                   tabIndex={4}
                   onClick={handleClickTimeCalc} />
               </div>
@@ -254,7 +260,7 @@ export default function Home() {
               <div className="mb-6 text-center">
                 <FormButton
                   disabled={!isValidForCalcDecimal()}
-                  label='10進数 の計算'
+                  label='10進数計算'
                   tabIndex={10}
                   onClick={handleClickDecimalCalc} />
               </div>
@@ -264,10 +270,10 @@ export default function Home() {
 
         <div className="col-span-3">
           <h2 className="mb-2">計算ログ</h2>
-          <div 
+          <div
             className="w-full p-0 text-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mb-6">
             <textarea
-              tabIndex={11} 
+              tabIndex={11}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               style={{ height: '250px' }}
               readOnly
@@ -279,9 +285,9 @@ export default function Home() {
             label='計算ログを削除'
             tabIndex={12}
             onClick={handleFlushLog} />
-          <small className="ml-4 text-slate-400">
-            ※ 計算ログはサーバやcookieで収集・保存していません。 ※ ブラウザのリロードでも、計算ログが消去されます。
-          </small>
+        </div>
+        <div className="col-span-3">
+          <small className="text-slate-400">※ 計算ログはサーバやcookieで収集・保存していません。 ※ ブラウザのリロードでも、計算ログが消去されます。</small>
         </div>
       </div>
     </main>
