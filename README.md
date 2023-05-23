@@ -1,4 +1,10 @@
-# Project setup log
+# Time / Decimal conversion
+
+HH:MM time and decimal time can be converted to each other. Simple calculations are also supported. For example, in the case of 9:00-12:30, the difference in HH:MM format is 3:30, but the difference in decimal format is 3.5.
+
+# Development
+
+## Project setup log
 
 ref: https://zenn.dev/yuki_tu/articles/01c7963eeb2876
 
@@ -10,8 +16,6 @@ $ # cd time-decimal-calculator
 $ # yarn add -D tailwindcss postcss autoprefixer cssnano
 $ # yarn tailwindcss init -p
 ```
-
-# Development
 
 ## Only execute first time (For Windows environment, if needed)
 
@@ -27,3 +31,13 @@ $ open http://localhost:3000/
 $ docker-compose up
 $ open http://localhost:3000/
 ```
+
+# Production deployment
+
+## Available
+
+- Render.com with Docker Deployment
+
+## Environments
+
+- `NEXT_PUBLIC_GA_ID` for Google Analytics (not required in development)
