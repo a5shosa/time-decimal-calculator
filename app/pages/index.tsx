@@ -3,6 +3,7 @@ import FormInputText from '@/components/form/InputText';
 import FormSelect from '@/components/form/Select';
 import MainHeader from '@/components/main/Header';
 import { Inter } from 'next/font/google'
+import Link from 'next/link';
 import { ChangeEvent, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -275,7 +276,7 @@ export default function Home() {
             <textarea
               tabIndex={11}
               className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              style={{ height: '250px' }}
+              style={{ height: '170px' }}
               readOnly
               value={formData.log}>
             </textarea>
@@ -286,8 +287,19 @@ export default function Home() {
             tabIndex={12}
             onClick={handleFlushLog} />
         </div>
-        <div className="col-span-3">
-          <small className="text-slate-400">※ 計算ログはサーバやcookieで収集・保存していません。 ※ ブラウザのリロードでも、計算ログが消去されます。</small>
+        <div className="col-span-3 grid-cols-12">
+          <div className="col-span-8 text-left">
+            <small className="text-slate-400">
+              ※ 計算ログはサーバやcookieで収集・保存していません。 ※ ブラウザのリロードでも、計算ログが消去されます。
+            </small>
+          </div>
+          <div className="col-span-4 text-right minismartphone:mt-2">
+            <small className="text-slate-400">
+              <Link target="_blank" href="https://github.com/a5shosa/time-decimal-calculator/issues">send feedback</Link>
+              &nbsp;/&nbsp;
+              <Link target="_blank" href="https://www.a5shosa.com/">a5shosa.com</Link>
+            </small>
+          </div>
         </div>
       </div>
     </main>
