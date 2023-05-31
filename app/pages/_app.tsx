@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
          strategy="afterInteractive"
          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
        />
-       { process.env.NEXT_PUBLIC_GADS_CLIENT && <Script
+       { process.env.NEXT_PUBLIC_GADS_CLIENT && <script
          data-ad-client={process.env.NEXT_PUBLIC_GADS_CLIENT}
          async
          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js`}
