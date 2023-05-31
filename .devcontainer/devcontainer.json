@@ -1,0 +1,21 @@
+{
+	"name": "Existing Docker Compose (Extend)",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "front",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"MS-CEINTL.vscode-language-pack-ja",
+				"esbenp.prettier-vscode",
+				"dbaeumer.vscode-eslint",
+				"dsznajder.es7-react-js-snippets",
+        "foxundermoon.next-js",
+        "pulkitgangwar.nextjs-snippets"
+			]
+		}
+	},
+}

@@ -2,6 +2,7 @@ version: "3"
 services:
   front:
     build: .
+    platform: linux/amd64
     tty: true
     ports:
       - "3000:3000" # for development
