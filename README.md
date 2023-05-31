@@ -4,6 +4,27 @@ HH:MM time and decimal time can be converted to each other. Simple calculations 
 
 # Development
 
+## devcontainer
+
+NOTICE: Apple Silicon mac is too slow when launch and execute some commands in devcontainer.
+
+### Only execute first time
+
+```
+* Install VSCode and "Dev Containers" extension by microsoft.com
+```
+
+### Second time onwards
+
+```
+* Click VSCode left-bottom button and select "Reopen in container"
+* Enter within devcontainer
+* Open Terminal
+> # cd app
+> # yarn
+> # yarn dev
+```
+
 ## Project setup log
 
 ref: https://zenn.dev/yuki_tu/articles/01c7963eeb2876
