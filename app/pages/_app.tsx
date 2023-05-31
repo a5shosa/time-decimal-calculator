@@ -34,11 +34,11 @@ export default function App({ Component, pageProps }: AppProps) {
          strategy="afterInteractive"
          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
        />
-       <Script
+       { process.env.NEXT_PUBLIC_GADS_CLIENT && <Script
          async
          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GADS_CLIENT}`}
          crossOrigin="anonymous"
-       />
+       />}
        <Script
          id="gtag-init"
          strategy="afterInteractive"
