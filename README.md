@@ -41,3 +41,4 @@ $ open http://localhost:3000/
 ## Environments
 
 - `NEXT_PUBLIC_GA_ID` for Google Analytics (not required in development)
+- `NEXT_PUBLIC_GADS_CLIENT` for Google AdSense
